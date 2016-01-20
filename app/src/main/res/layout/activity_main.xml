@@ -1,0 +1,108 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MainActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F0F4F7"
+        android:elevation="4dp"
+        android:minHeight="?attr/actionBarSize"
+        android:paddingTop="@dimen/tool_bar_top_padding"
+        android:transitionName="actionBar"
+        android:navigationIcon="@drawable/ic_menu_white_48dp" >
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:id="@+id/logo_view"
+            android:background="@drawable/logo2"
+            android:paddingLeft="50dp" />
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/caredit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="A 000 AAA | 071"
+        android:layout_alignParentStart="false"
+        android:layout_centerInParent="true"
+        app:met_iconLeft="@drawable/ic_menu_white_48dp"
+        app:met_maxCharacters="14"
+        android:gravity="center"
+        app:met_clearButton="true"/>
+
+    <com.viewpagerindicator.TitlePageIndicator
+        android:id="@+id/titles"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_alignParentBottom="true"
+        android:background="#FA5AFA"
+        android:layout_below="@+id/textView3" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Введите номер вашего автомобиля"
+        android:id="@+id/textView2"
+        android:textColor="#007AFF"
+        android:textSize="25dp"
+        android:gravity="top|center"
+        android:lines="3"
+        android:layout_above="@+id/caredit"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView2"
+        android:background="@drawable/header"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/textView2"
+        android:layout_below="@+id/toolbar" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="\nПри повторном использовании приложения номер автомобиля сохранится, и Вам больше не придётся вводить его заново."
+        android:id="@+id/textView3"
+        android:textColor="#007AFF"
+        android:textSize="20dp"
+        android:gravity="top|center"
+        android:layout_below="@+id/caredit"
+        android:layout_alignParentStart="true" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/radioButton"
+        android:layout_below="@+id/textView3"
+        android:layout_alignStart="@+id/caredit"
+        android:layout_marginTop="46dp"
+        android:textColor="#000000"
+        android:enabled="true"
+        android:checked="true" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/radioButton2"
+        android:textColor="#000000"
+        android:enabled="true"
+        android:checked="false"
+        android:layout_alignBottom="@+id/radioButton"
+        android:layout_alignEnd="@+id/caredit"
+        android:visibility="visible" />
+
+</RelativeLayout>

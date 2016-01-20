@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/logo_parking"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/logo_time"
+        android:layout_below="@+id/logo_parking"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:id="@+id/parking_number"
+        android:layout_toEndOf="@+id/logo_parking"
+        android:text="0000 "
+        android:textColor="#000000"
+        android:textSize="22dp"
+        android:gravity="bottom"
+        android:layout_above="@+id/logo_time"
+        android:layout_alignParentTop="true" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Таганская ул., г. Москва"
+        android:id="@+id/parking_address"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/parking_number"
+        android:textColor="#000000"
+        android:gravity="bottom|center"
+        android:layout_alignBottom="@+id/parking_number"
+        android:textSize="17dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Начало парковки:"
+        android:id="@+id/parking_start_text"
+        android:layout_below="@+id/parking_number"
+        android:layout_toEndOf="@+id/logo_parking"
+        android:textColor="#969696" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Small Text"
+        android:id="@+id/parking_end_time"
+        android:layout_below="@+id/parking_start_text"
+        android:layout_alignBottom="@+id/logo_time"
+        android:layout_alignEnd="@+id/parking_start_text"
+        android:layout_toEndOf="@+id/logo_time"
+        android:textColor="#000000"
+        android:gravity="center" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Окончание парковки:"
+        android:id="@+id/parking_end_text"
+        android:textColor="#969696"
+        android:layout_below="@+id/parking_address"
+        android:layout_above="@+id/parking_end_time"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/parking_start_text"
+        android:gravity="center"
+        android:textAlignment="center" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Small Text"
+        android:id="@+id/parking_end_time1"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:layout_below="@+id/parking_end_text"
+        android:layout_toRightOf="@+id/parking_start_text"
+        android:layout_alignEnd="@+id/parking_end_text"
+        android:layout_above="@+id/parking_status" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Статус"
+        android:id="@+id/parking_status"
+        android:layout_below="@+id/logo_time"
+        android:layout_alignParentEnd="true"
+        android:textColor="#000000" />
+
+</RelativeLayout>

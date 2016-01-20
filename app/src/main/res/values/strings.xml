@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="action_settings">Settings</string>
+    <string name="drawer_item_car_number">Номер автомобиля</string>
+    <string name="drawer_item_pay">Оплата парковки</string>
+    <string name="drawer_item_notifications">Настройка уведомлений</string>
+    <string name="drawer_item_map">Карта парковок</string>
+    <string name="drawer_item_history">История парковки</string>
+    <string name="drawer_item_contact">О разработчиках</string>
+</resources>
