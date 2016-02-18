@@ -3,9 +3,8 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.2"
-
     defaultConfig {
-        applicationId "com.okunev.myapplication"
+        applicationId 'com.okunev.fastparking'
         minSdkVersion 17
         targetSdkVersion 23
         versionCode 1
@@ -17,6 +16,8 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    productFlavors {
+    }
 }
 
 repositories {
@@ -26,8 +27,7 @@ repositories {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile('com.mikepenz.materialdrawer:library:0.9.5@aar') {
@@ -39,13 +39,15 @@ dependencies {
     compile 'com.nhaarman.listviewanimations:lib-core-slh:3.1.0@aar'
     compile 'info.hoang8f:android-segmented:1.0.6'
     compile 'com.rengwuxian.materialedittext:library:2.1.4'
-    compile ('com.weiwangcn.betterspinner:library-material:1.1.0') {
+    compile('com.weiwangcn.betterspinner:library-material:1.1.0') {
         exclude group: 'com.android.support', module: 'appcompat-v7'
         exclude group: 'com.rengwuxian.materialedittext', module: 'library'
     }
     compile 'com.jakewharton:butterknife:7.0.1'
-    compile ('com.weiwangcn.betterspinner:library:1.1.0') {
+    compile('com.weiwangcn.betterspinner:library:1.1.0') {
         exclude group: 'com.android.support', module: 'appcompat-v7'
     }
-
+    compile 'com.google.code.gson:gson:2.5'
+    compile 'com.android.support:design:23.1.1'
+    compile 'com.google.android.gms:play-services:8.3.0'
 }

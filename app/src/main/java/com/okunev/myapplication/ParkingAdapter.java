@@ -50,7 +50,7 @@ public class ParkingAdapter extends BaseAdapter {
             convertView = inflater.inflate(R.layout.item_new, parent, false);
         }
 
-        Typeface face = Typeface.createFromAsset(items.get(position).getAssets(), "Roboto-Regular.ttf");
+        Typeface face = Typeface.createFromAsset(context.getAssets(), "Roboto-Regular.ttf");
 
         ImageView logo_parking = (ImageView)convertView.findViewById(R.id.logo_parking);
         logo_parking.setImageResource(items.get(position).getLogo_parking());

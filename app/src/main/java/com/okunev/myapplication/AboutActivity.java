@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 
-import com.mikepenz.iconics.typeface.FontAwesome;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.model.DividerDrawerItem;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
@@ -40,15 +39,15 @@ public class AboutActivity extends ActionBarActivity {
                 .withToolbar(toolbar)
                 .withActionBarDrawerToggle(true)
                 .addDrawerItems(
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_car_number).withIcon(FontAwesome.Icon.faw_home).withIdentifier(0),
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_pay).withIcon(FontAwesome.Icon.faw_gamepad).withIdentifier(1),
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_notifications).withIcon(FontAwesome.Icon.faw_eye).withIdentifier(2),
+                        new PrimaryDrawerItem().withName(R.string.drawer_item_car_number).withIcon(getResources().getDrawable(R.drawable.drawer1)).withIdentifier(0),
+                        new PrimaryDrawerItem().withName(R.string.drawer_item_pay).withIcon(getResources().getDrawable(R.drawable.drawer2)).withIdentifier(1),
+                        new PrimaryDrawerItem().withName(R.string.drawer_item_notifications).withIcon(getResources().getDrawable(R.drawable.drawer3)).withIdentifier(2),
                         new DividerDrawerItem(),
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_map).withIcon(FontAwesome.Icon.faw_bell).withIdentifier(3),//4
+                        new PrimaryDrawerItem().withName(R.string.drawer_item_map).withIcon(getResources().getDrawable(R.drawable.drawer4)).withIdentifier(3),//4
                         new DividerDrawerItem(),
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_history).withIcon(FontAwesome.Icon.faw_cog).withIdentifier(4),//6
+                        new PrimaryDrawerItem().withName(R.string.drawer_item_history).withIcon(getResources().getDrawable(R.drawable.drawer5)).withIdentifier(4),//6
                         new DividerDrawerItem(),
-                        new PrimaryDrawerItem().withName(R.string.drawer_item_contact).withIcon(FontAwesome.Icon.faw_question).withIdentifier(5)//8
+                        new PrimaryDrawerItem().withName(R.string.drawer_item_contact).withIcon(getResources().getDrawable(R.drawable.drawer6)).withIdentifier(5)//8
                 )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
@@ -57,10 +56,23 @@ public class AboutActivity extends ActionBarActivity {
                         switch ((int) id) {
                             case 0:
                                 intent = new Intent(AboutActivity.this, MainActivity.class);
+                                intent.putExtra("need", true);
+                                startActivity(intent);
+                                break;
+                            case 1:
+                                intent = new Intent(AboutActivity.this, PayActivity.class);
+                                startActivity(intent);
+                                break;
+                            case 2:
+                                intent = new Intent(AboutActivity.this, NotificationActivity.class);
                                 startActivity(intent);
                                 break;
                             case 6:
                                 intent = new Intent(AboutActivity.this, HistoryActivity.class);
+                                startActivity(intent);
+                                break;
+                            case 4:
+                                intent = new Intent(AboutActivity.this,MapActivity.class);
                                 startActivity(intent);
                                 break;
                         }
@@ -68,7 +80,7 @@ public class AboutActivity extends ActionBarActivity {
                 })
                 .build();
         drawerResult.getSlider().setBackgroundColor(getResources().getColor(R.color.material_drawer_background1));
-
+        drawerResult.setSelection(8);
 
     }
 

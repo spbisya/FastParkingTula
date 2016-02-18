@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action"
+        android:orderInCategory="100"
+        android:title="Hybryd"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action1"
+        android:orderInCategory="100"
+        android:title="Normal"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action2"
+        android:orderInCategory="100"
+        android:title="Satellite"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action3"
+        android:orderInCategory="100"
+        android:title="Terrain"
+        app:showAsAction="never" />
+</menu>

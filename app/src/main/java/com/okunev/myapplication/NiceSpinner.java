@@ -218,12 +218,12 @@ public class NiceSpinner extends TextView {
     }
 
     public <T> void attachDataSource(@NonNull List<T> dataset) {
-        mAdapter = new NiceSpinnerAdapter<>(getContext(), dataset);
+        mAdapter = new com.okunev.myapplication.NiceSpinnerAdapter<>(getContext(), dataset);
         setAdapterInternal(mAdapter);
     }
 
     public void setAdapter(@NonNull ListAdapter adapter) {
-        mAdapter = new NiceSpinnerAdapterWrapper(getContext(), adapter);
+        mAdapter = new com.okunev.myapplication.NiceSpinnerAdapterWrapper(getContext(), adapter);
         setAdapterInternal(mAdapter);
     }
 
