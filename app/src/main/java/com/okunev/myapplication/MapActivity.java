@@ -1,7 +1,10 @@
 package com.okunev.myapplication;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -45,7 +48,6 @@ public class MapActivity extends AppCompatActivity {
         setTitle("Карта парковок");
 
 
-
         drawerResult = new Drawer()
                 .withActivity(this)
                 .withToolbar(toolbar)
@@ -72,7 +74,7 @@ public class MapActivity extends AppCompatActivity {
                                 startActivity(intent);
                                 break;
                             case 1:
-                                intent = new Intent(MapActivity.this,PayActivity.class);
+                                intent = new Intent(MapActivity.this, PayActivity.class);
                                 startActivity(intent);
                                 break;
                             case 2:
@@ -106,7 +108,7 @@ public class MapActivity extends AppCompatActivity {
             JSONArray array = reader.getJSONArray("objects");
             int count = array.length();
 
-            for(int i = 0;i<count;i++){
+            for (int i = 0; i < count; i++) {
                 try {
                     JSONObject first = array.getJSONObject(i);
                     JSONObject addr = first.getJSONObject("address");
@@ -120,21 +122,31 @@ public class MapActivity extends AppCompatActivity {
                     String lat = third.getString(1);
                     LatLng coords = new LatLng(Double.parseDouble(lat), Double.parseDouble(longt));
                     googleMap.addMarker(new MarkerOptions().
-                            position(coords).title("Номер: "+num+", "+street+", д"+house));
-                }
-                catch (Exception l){
-                    errors+=""+i+" ";
+                            position(coords).title("Номер: " + num + ", " + street + ", д" + house));
+                } catch (Exception l) {
+                    errors += "" + i + " ";
                 }
             }
+        } catch (Exception l) {
+            //  Toast.makeText(this, "ERR", Toast.LENGTH_LONG).show();
         }
-        catch (Exception l){
-          //  Toast.makeText(this, "ERR", Toast.LENGTH_LONG).show();
-        }
-      //  Toast.makeText(this, errors, Toast.LENGTH_LONG).show();
+        //  Toast.makeText(this, errors, Toast.LENGTH_LONG).show();
         LatLng coords = new LatLng(54.193508, 37.602129);
+
         CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(coords, 13.12f);
-        googleMap.setMyLocationEnabled(true);
         googleMap.moveCamera(cameraUpdate);
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
+        googleMap.setMyLocationEnabled(true);
+
     }
 
     @Override

@@ -17,7 +17,9 @@
     -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
+    <!--
+        Тут можно изменить название и иконку
+        -->
     <application
         android:allowBackup="true"
         android:icon="@mipmap/launch"
@@ -43,7 +45,11 @@
             android:exported="true"></service>
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyC4x-ABZ9U89ZGDRz81PHDuuSGmrHuo5XY" />
+            android:value="AIzaSyA5EDBc-kdBVV0ill-KIzHnspMZEPGn1Us" />
+        <!--
+        Сюда вставляете ваш ключик карт такого вида
+        AIzaSyA5EDBc-kdBVV0ill-KIzHnspMZEPGn1Us
+        -->
     </application>
 
 </manifest>
